@@ -1,0 +1,43 @@
+modules = ["python-3.12"]
+[nix]
+packages = ["unzipNLS", "zip"]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Ultra Safe Skin Mod"
+
+[[workflows.workflow]]
+name = "Run Skin Mod"
+author = 45363786
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python run_mod.py"
+
+[[workflows.workflow]]
+name = "Safe Skin Mod"
+author = 45363786
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python run_safe_mod.py"
+
+[[workflows.workflow]]
+name = "Ultra Safe Skin Mod"
+author = 45366287
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python run_minimal_mod.py"
+
+[[workflows.workflow]]
+name = "Compare Files"
+author = 45366287
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python compare_files.py"
